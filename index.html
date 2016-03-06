@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
-<body ng-app="mgApp">
+<body ng-app="mgApp" ng-controller="MainController as mmg">
 <nav class="navbar-fluid navbar-default navbar-fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#"> MakemeGreen! </a>
@@ -14,10 +14,26 @@
         <p class="navbar-right navbar-text"><a href="#/login">Login</a> or <a href="#/register">Register</a></p>
     </div>
 </nav>
+<br><br><br><br>
+<div class="col-md-offset-2">
+    <div class="form-group" style="width:500px;">
+        <label for="sel1">Enter dimension:</label>
+        <select class="form-control" id="sel1" ng-model="mmg.dimension">
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+        </select>
+    </div>
+    <button class="btn btn-default" ng-click="mmg.initialize()">Okay</button>
+</div>
 <div class="col-md-offset-3 col-md-6">
     <div id="maingrid">
-        
+
     </div>
 </div>
+<script>
+
+</script>
 </body>
 </html>

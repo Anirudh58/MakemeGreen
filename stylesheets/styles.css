@@ -2,3 +2,21 @@
     position: relative;
     top: 100px;
 }
+
+.grid { margin:1em auto; border-collapse:collapse }
+.grid td {
+    cursor:pointer;
+    width:90px; height:90px;
+    border:1px solid #ccc;
+    text-align:center;
+    font-family:sans-serif; font-size:13px
+}
+.grid td.green {
+    background-color:green;
+    font-weight:bold; color:black;
+}
+
+.grid td.red {
+    background-color:red;
+    font-weight:bold; color:black;
+}
