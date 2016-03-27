@@ -2,7 +2,7 @@
 
 <h2> INSTRUCTIONS </h2>
 
-![alt tag](https://github.com/Anirudh58/MakemeGreen/tree/master/screenshots/ss.png)
+![screenshot](https://github.com/Anirudh58/MakemeGreen/tree/master/screenshots/ss.png)
 
 <ul>
   <li> Goal of the game is simple. Make all boxes green </li>
