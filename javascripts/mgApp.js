@@ -36,7 +36,7 @@ app.controller('MainController', ['$scope',
                 if(isGameDone()){
                     vm.GameDone = true;
                     $('#myModal').modal('show');
-                    
+
                     //do popup
                 }
             });
