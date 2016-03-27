@@ -1,38 +1,92 @@
-<html>
+<html data-ng-app="mgApp">
 <head>
     <title>MakemeGreen</title>
     <script src="javascripts/angular.js"></script>
     <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/mgApp.js"></script>
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
-<body ng-app="mgApp" ng-controller="MainController as mmg">
-<nav class="navbar-fluid navbar-default navbar-fixed-top">
+<body data-ng-controller="MainController as mmg">
+<nav class="navbar-fluid navbar-default navbar-fixed-top" style="background-color: #5cb85c">
     <div class="container">
-        <a class="navbar-brand" href="#"> MakemeGreen! </a>
-        <p class="navbar-text"> Convert all red boxes to green in the minimum number of moves! </p>
-        <p class="navbar-right navbar-text"><a href="#/login">Login</a> or <a href="#/register">Register</a></p>
+        <a class="navbar-brand" href="#" style="position: relative; left: -200px; color: white;"> MakemeGreen </a>
+        <p class="navbar-text pull-right" style="position: relative; left: 200px; color: white;"> Convert all red boxes to green in the minimum number of moves! </p>
     </div>
 </nav>
 <br><br><br><br>
-<div class="col-md-offset-2">
-    <div class="form-group" style="width:500px;">
-        <label for="sel1">Enter dimension:</label>
-        <select class="form-control" id="sel1" ng-model="mmg.dimension">
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-        </select>
-    </div>
-    <button class="btn btn-default" ng-click="mmg.initialize()">Okay</button>
-</div>
-<div class="col-md-offset-3 col-md-6">
-    <div id="maingrid">
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">GAME OVER! YOU DID IT</h4>
+            </div>
+            <div class="modal-body">
+                <p> YOUR SCORE IS {{ mmg.clicks }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" onclick="location.reload()">Play again</button>
+            </div>
+        </div>
 
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-offset-1 col-md-3">
+        <div class="form-group" style="width:500px;">
+            <label for="sel1">Enter dimension: {{ mmg.dimension  }} </label>
+            <select class="form-control" id="sel1" ng-model="mmg.dimension">
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
+        </div>
+        <button class="btn btn-success start" ng-click="mmg.initialize()"> START </button>
+    </div>
+
+    <div class="col-md-offset-1 col-md-3" style="position: relative; left: 100px; top:10px;">
+        <h3> Clicks: {{ mmg.clicks }} </h3>
+    </div>
+
+    <div class="col-md-3">
+        <div class="form-group" style="width:500px;">
+            <label for="sel2">Enter difficulty:</label>
+            <select class="form-control" id="sel2" ng-model="mmg.difficulty">
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Difficult</option>
+            </select>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <button class="btn btn-success btn-lg refresh" onclick="location.reload()"> RESTART </button>
+    </div>
+
+    <div class="col-md-6">
+        <div id="maingrid">
+
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <button class="btn btn-success btn-lg scores"> HIGH SCORES </button>
+    </div>
+</div>
+
+
 <script>
 
 </script>
